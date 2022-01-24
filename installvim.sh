@@ -40,10 +40,10 @@ colorscheme deus
 filetype on
 eos
 vim +PluginInstall +qall
-mkdir -p ~/.vim/colors
+mkdir -p $HOME/.vim/colors
 git clone https://github.com/ajmwagar/vim-deus.git
-mv ~/vim-deus/colors/deus.vim ~/.vim/colors/
-rm -rf ~/vim-deus
-python3 ~/.vim/bundle/YouCompleteMe/install.py --all
+mv vim-deus/colors/deus.vim $HOME/.vim/colors/
+rm -rf vim-deus
+python3 $HOME/.vim/bundle/YouCompleteMe/install.py --all
 
 
