@@ -1,19 +1,24 @@
 #!/bin/bash
+sudo apt update
 sudo apt install -y \
-	vim-athena \
-	git \
-	python3-dev \
-	cmake \
 	build-essential \
-	mono-complete \
-	golang \
-	nodejs \
-	default-jdk \
-	npm \
+	cmake \
 	curl \
+	default-jdk \
+	git \
+	golang \
+	mono-complete \
+	nodejs \
+	npm \
+	python3-dev \
+	vim-athena \
 	wget
 mkdir -p .ssh
 git clone https://github.com/flyfeifan/Vundle.git ~/.vim/bundle/Vundle.vim
+mkdir -p $HOME/.vim/colors
+git clone https://github.com/ajmwagar/vim-deus.git
+mv vim-deus/colors/deus.vim $HOME/.vim/colors/
+rm -rf vim-deus
 cat <<- eos > "$HOME/.vimrc"
 set nocompatible
 filetype off
@@ -42,10 +47,6 @@ colorscheme deus
 filetype on
 eos
 vim +PluginInstall +qall
-mkdir -p ~/.vim/colors
-git clone https://github.com/ajmwagar/vim-deus.git
-mv ~/vim-deus/colors/deus.vim ~/.vim/colors/
-rm -rf ~/vim-deus
-python3 ~/.vim/bundle/YouCompleteMe/install.py --all
+python3 $HOME/.vim/bundle/YouCompleteMe/install.py --all
 
 
