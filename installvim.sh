@@ -45,6 +45,7 @@ autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 colorscheme deus
 filetype on
+set conceallevel=2
 eos
 vim +PluginInstall +qall
 python3 $HOME/.vim/bundle/YouCompleteMe/install.py --all
